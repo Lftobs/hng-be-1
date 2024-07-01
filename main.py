@@ -17,9 +17,9 @@ def get_real_ip(request: Request):
         return request.client.host
 
 @app.get("/api/hello")
-async def greeting(request: Request, vistor_name: str):
+async def greeting(request: Request, visitor_name: str):
     ip_add = get_real_ip(request)
-    name = vistor_name.replace('"', '')
+    name = visitor_name.replace('"', '')
     url  = f'https://ipinfo.io/{ip_add}/json'
     res = requests.get(url)
     data = res.json()
