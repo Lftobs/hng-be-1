@@ -20,14 +20,11 @@ def get_real_ip(request: Request):
 async def greeting(request: Request, visitor_name: str):
     ip_add = get_real_ip(request)
     name = visitor_name.replace('"', '')
-    url  = f'https://ipinfo.io/{ip_add}/json'
+    url  = f'https://api.weatherapi.com/v1/current.json?q={ip_add}&key={os.getenv("KEY")}'
     res = requests.get(url)
     data = res.json()
-    location = data.get('city', 'Delhi')
-    weather_url = f'http://api.openweathermap.org/data/2.5/weather?q={location}&appid={os.getenv("KEY")}'
-    weather_res = requests.get(weather_url)
-    weather_data = weather_res.json()
-    text = f'Hello, {name}!, the temperature is {weather_data["main"]["temp"]} degrees Celsius in {location}'
+    location = data["location"].get('region', 'Delhi')
+    text = f'Hello, {name}!, the temperature is {data["current"]["temp_c"]} degrees Celsius in {location}'
     
     return JSONResponse(content={
         "client_ip": ip_add,
