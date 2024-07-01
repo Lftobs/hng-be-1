@@ -29,5 +29,5 @@ async def greeting(request: Request, visitor_name: str):
     return JSONResponse(content={
         "client_ip": ip_add,
         "location": location,
-        "greating": text,
+        "greeting": text,
     })
