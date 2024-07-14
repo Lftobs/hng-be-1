@@ -42,15 +42,16 @@ async def greeting(request: Request, visitor_name: str):
     })
 
 @app.get('/api/products')
-async def get_products():
-    url = 'https://api.timbu.cloud/products?organization_id=03af836300e34bb48831075106b554bb&reverse_sort=false&page=1&size=10&Appid=6ZESPPKXZ7OPDFR&Apikey=82115e5783294ce3acd4b64e293155e820240712143109614206'
+async def get_products(request: Request):
+    url = f'https://api.timbu.cloud/products?{request.query_params}'
+    print(url)
     res = requests.get(url)
     data = res.json()
     return JSONResponse(content=data)
 
 @app.get('/api/products/{product_id}')
-async def get_products(product_id: str):
-    url = f'https://api.timbu.cloud/products/{product_id}?organization_id=03af836300e34bb48831075106b554bb&reverse_sort=false&page=1&size=10&Appid=6ZESPPKXZ7OPDFR&Apikey=82115e5783294ce3acd4b64e293155e820240712143109614206'
+async def get_products(product_id: str, request: Request):
+    url = f'https://api.timbu.cloud/products/{product_id}?{request.query_params}'
     res = requests.get(url)
     data = res.json()
     return JSONResponse(content=data)
