@@ -25,7 +25,7 @@ app.add_middleware(
 async def main():
     return {
         "email": "tobbytobs1@gmail.com",
-        "current_datetime": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "current_datetime": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds'),
         "github_url": "https://github.com/Lftobs/hng-be-1"
     }
 
