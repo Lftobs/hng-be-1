@@ -23,12 +23,9 @@ app.add_middleware(
 
 @app.get("/")
 async def main():
-    email ='tobbytobs1@gmail.com'
-    date = datetime.datetime.now(datetime.timezone.utc).isoformat()
-    github_url = 'https://github.com/Lftobs/hng-be-1'
-    return JSONResponse(content={
-        "email": email,
-        "current_datetime": date,
-        "github_url": github_url,
-    }, status_code=status.HTTP_200_OK)
+    return {
+        "email": "tobbytobs1@gmail.com",
+        "current_datetime": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "github_url": "https://github.com/Lftobs/hng-be-1"
+    }
 
