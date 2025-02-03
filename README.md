@@ -25,6 +25,27 @@ GET /
   "github_url": "https://github.com/Lftobs/hng-be-1/tree/main"
 }
 ```
+
+### **2. Number Classification API**  
+#### **Endpoint**  
+```http
+GET /api/classify-number?number=371
+```
+
+#### **Response example**
+```json
+{
+  "number": 371,
+  "is_prime": false,
+  "is_perfect": false,
+  "properties": [
+    "armstrong",
+    "odd"
+  ],
+  "digit_sum": 11,
+  "fun_fact": "371 is a narcissistic number."
+}
+```
 ## **How to Run Locally**  
 
 ### **Prerequisites**  
