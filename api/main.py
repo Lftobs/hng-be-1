@@ -2,7 +2,7 @@ from fastapi import FastAPI, Query
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 import datetime
-from .api.stage_two import stage_two_router
+from .stage_two import stage_two_router
 
 app = FastAPI()
 app.add_middleware(

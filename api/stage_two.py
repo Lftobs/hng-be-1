@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Query
 from fastapi.responses import JSONResponse
 import httpx
-from ..utils import is_armstrong, is_prime, is_perfect, digit_sum
+from lib.utils import is_armstrong, is_prime, is_perfect, digit_sum
 
 stage_two_router = APIRouter()
 
