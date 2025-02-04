@@ -1,5 +1,5 @@
 
-# **Public API for HNG Tasks**  
+# **Public API for HNG Stage 0 Task**  
 
 This is a simple public API built using **FastAPI** for the **HNG Internship 12 - Stage 0 Backend Task**. The API returns basic information in JSON format, including:  
 - Your registered email address  
